@@ -1,8 +1,13 @@
-# rdesk — downloads
+<p align="center">
+  <img src="icon_512.png" width="120" alt="rdesk">
+</p>
 
-Acesso remoto simples para **Windows** (parecido com o AnyDesk). Baixe, abra e pronto: cada máquina ganha um **ID** e uma **senha**; quem vai acessar digita o ID + a senha e vê a tela ao vivo, com mouse e teclado.
+<h1 align="center">rdesk — downloads</h1>
 
-> O **código-fonte** fica em um repositório privado. Este repositório guarda apenas os **downloads** (binários prontos).
+<p align="center">Acesso remoto simples para <b>Windows</b> (como o AnyDesk).<br>
+Baixe, abra e conecte por um <b>ID</b>; a outra máquina só precisa <b>aceitar</b>.</p>
+
+> O **código-fonte** fica num repositório privado. Aqui ficam só os **downloads**.
 
 ## Baixar
 
@@ -10,30 +15,35 @@ Vá em **[Releases](../../releases/latest)** e escolha:
 
 | Arquivo | O que é |
 |---|---|
-| **rdesk-setup.exe** | Instalador (recomendado) — cria atalhos, firewall e opção de PATH. |
-| **rdesk-windows-x64.zip** | Versão portátil — descompacte e rode `rdesk-gui.exe`, sem instalar. |
+| **rdesk-setup.exe** | Instalador (recomendado) — atalhos, firewall e opção de PATH. |
+| **rdesk-windows-x64.zip** | Portátil — descompacte e rode `rdesk-gui.exe`, sem instalar. |
 
-Windows 10/11 (64 bits). Os binários são autossuficientes.
+Windows 10/11 (64 bits). Na 1ª execução o SmartScreen pode avisar "editor
+desconhecido" (app ainda não assinado): **Mais informações → Executar assim mesmo**.
 
-> Na primeira execução o Windows SmartScreen pode avisar "editor desconhecido" (o app ainda não é assinado). Clique em **Mais informações → Executar assim mesmo**.
+## Como usar
 
-## Como usar (por ID, pela internet)
+1. **Na máquina a ser acessada:** abra o rdesk — já fica acessível **por
+   confirmação**. Passe o **ID** (número grande). (Opcional: defina uma **senha**
+   para acesso não supervisionado.)
+2. **Na máquina que acessa:** digite o **ID** → **Conectar**. A outra máquina
+   clica **Aceitar**. A tela aparece ao vivo, com mouse e teclado.
 
-1. **Na máquina que será acessada:** abra o rdesk. Na 1ª vez ele já **gera uma senha** e deixa o **Serviço ativo** sozinho. Anote o **ID** (número grande) e, em *Senha de acesso*, clique em **Mostrar**. Passe o **ID + a senha** para quem vai acessar.
-2. **Na máquina que acessa:** abra o rdesk, digite o **ID**, a **senha**, e clique em **Conectar**.
+Pela internet funciona sem configurar nada (relay público embutido). O app
+avisa e **se atualiza sozinho** quando sai uma versão nova.
 
-O acesso por ID pela internet **já vem pronto** — há um servidor relay público embutido, não precisa configurar nada. Quando possível o vídeo vai direto (P2P); senão, passa pelo relay.
+## Recursos
 
-**Na mesma rede (LAN)**, dá para conectar direto pelo `IP:5900` no lugar do ID.
+- Tela ao vivo (H.264), mouse e teclado · acesso por **confirmação** ou **senha**
+- **Sessões recentes** e favoritos · **busca na rede local**
+- **Seleção de monitor** (host multi-monitor) · **prioridade do dono** no mouse
+- **Indicador + janela** de "sendo acessado" · transferência de arquivos
+- **Auto-update** no próprio app
 
 ## Segurança
 
-Conexões são autenticadas por senha (SPAKE2) e criptografadas (Noise + ChaCha20-Poly1305). Use apenas em máquinas suas ou com autorização explícita do dono.
+Conexões criptografadas ponta a ponta. **Senha** = SPAKE2 (à prova de MITM) +
+rate-limit. **Confirmação** = Noise XX com TOFU (a identidade do host é fixada
+no 1º acesso). O relay não lê a sessão. Cada release traz `checksums-sha256.txt`.
 
-## Verificação (opcional)
-
-Cada release traz `checksums-sha256.txt`. Para conferir um arquivo baixado no PowerShell:
-
-```powershell
-Get-FileHash .\rdesk-gui.exe -Algorithm SHA256
-```
+Use apenas em máquinas suas ou com autorização explícita do dono.
