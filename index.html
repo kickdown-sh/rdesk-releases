@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rdesk — acesso remoto grátis para Windows</title>
+<meta name="description" content="Acesso remoto gratuito para Windows. Baixe, abra e conecte por um ID de 9 dígitos; a outra máquina só aceita. Vídeo e teclado criptografados de ponta a ponta.">
+<meta name="theme-color" content="#202020">
+<link rel="canonical" href="https://kickdown-sh.github.io/rdesk-releases/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="rdesk">
+<meta property="og:title" content="rdesk — Digite o ID. A outra máquina só aceita.">
+<meta property="og:description" content="Acesso remoto gratuito para Windows, por um ID de 9 dígitos, com vídeo e teclado criptografados de ponta a ponta.">
+<meta property="og:url" content="https://kickdown-sh.github.io/rdesk-releases/">
+<meta property="og:image" content="https://kickdown-sh.github.io/rdesk-releases/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="rdesk: o ID 482 019 357 em azul sobre fundo escuro e a frase Digite o ID. A outra máquina só aceita.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<script>
+  // marca a página para o gesto de abertura só quando o movimento é permitido
+  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) document.documentElement.className = 'anim';
+</script>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#topo" aria-label="rdesk, início da página">
+      <img src="assets/icon-64.png" width="28" height="28" alt="">
+      <span>rdesk</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#como">Como funciona</a></li>
+        <li><a href="#seguranca">Segurança</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a class="ghost" href="#baixar">Baixar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <section class="hero" id="topo" aria-labelledby="h-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="h-hero">Digite o ID. <span>A outra máquina só aceita.</span></h1>
+        <p class="sub">Acesso remoto gratuito para Windows. Baixe, abra e conecte por um ID de 9 dígitos, com vídeo e teclado criptografados de ponta a ponta.</p>
+        <p class="cta-row">
+          <a class="btn" href="https://github.com/kickdown-sh/rdesk-releases/releases/latest/download/rdesk-setup.exe">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+            Baixar para Windows
+          </a>
+        </p>
+        <p class="meta">Instalador .exe · grátis, sem conta</p>
+      </div>
+
+      <div class="demo"><div role="img" aria-label="Exemplo da tela do rdesk: o ID 482 019 357 está disponível, e Fulano pede para acessar o computador, com os botões Aceitar e Recusar.">
+        <div class="idcard" id="idcard">
+          <div class="lbl"><span>Seu ID</span><span>exemplo</span></div>
+          <div class="idnum" id="idnum"><span class="g"><span>4</span><span>8</span><span>2</span></span><span class="g"><span>0</span><span>1</span><span>9</span></span><span class="g"><span>3</span><span>5</span><span>7</span></span></div>
+          <div class="status"><i></i><span id="stxt">Sendo acessado</span></div>
+          <div class="req" id="req">
+            <p><b>Fulano</b> quer acessar este computador.</p>
+            <div class="row"><span class="b">Aceitar</span><span class="b">Recusar</span></div>
+          </div>
+        </div>
+        </div>
+        <p class="cap">ID e nome de exemplo.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="strip" aria-label="Em resumo">
+        <li><b>ChaCha20-Poly1305</b> ponta a ponta</li>
+        <li><b>P2P</b> quando possível</li>
+        <li><b>relay</b> público embutido</li>
+        <li><b>sem conta</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="como" aria-labelledby="h-como">
+    <div class="wrap">
+      <h2 id="h-como">Como funciona</h2>
+      <ol class="steps">
+        <li>
+          <h3>Baixe e abra</h3>
+          <p>Cada máquina ganha um ID de 9 dígitos.</p>
+        </li>
+        <li>
+          <h3>Digite o ID</h3>
+          <p>Pela internet, o relay embutido já resolve. Na rede local, o rdesk acha os computadores sozinho.</p>
+        </li>
+        <li>
+          <h3>A outra máquina aceita</h3>
+          <p>Quem está no computador vê “Fulano quer acessar” e decide. Sem aceitar, ninguém entra.</p>
+        </li>
+      </ol>
+      <p class="note">Prefere entrar sem ninguém aceitar? Defina uma senha na máquina acessada.</p>
+    </div>
+  </section>
+
+  <section id="seguranca" aria-labelledby="h-seg">
+    <div class="wrap">
+      <h2 id="h-seg">Segurança que você pode conferir</h2>
+      <p class="lead">Os algoritmos têm nome, para quem quiser verificar.</p>
+      <dl class="spec">
+        <div>
+          <dt>Ponta a ponta</dt>
+          <dd>Vídeo e entrada cifrados com <code>ChaCha20-Poly1305</code>. O relay só repassa bytes cifrados e não lê a sessão.</dd>
+        </div>
+        <div>
+          <dt>Senha sem vazamento</dt>
+          <dd><code>SPAKE2</code>: sem ataque de dicionário offline, uma tentativa por conexão, com limite de taxa.</dd>
+        </div>
+        <div>
+          <dt>Identidade fixa</dt>
+          <dd><code>Noise XX</code> com TOFU: a chave da máquina é fixada no primeiro acesso e, se mudar, o acesso é bloqueado.</dd>
+        </div>
+        <div>
+          <dt>Código de verificação</dt>
+          <dd>Um código curto nas duas telas confirma que não há intermediário.</dd>
+        </div>
+        <div>
+          <dt>Mesma versão dos dois lados</dt>
+          <dd>Se forem diferentes, a conexão é recusada e pede atualização.</dd>
+        </div>
+      </dl>
+      <p class="note">Use apenas em máquinas suas ou com autorização explícita do dono.</p>
+    </div>
+  </section>
+
+  <section id="recursos" aria-labelledby="h-rec">
+    <div class="wrap">
+      <h2 id="h-rec">O que mais ele faz</h2>
+      <ul class="feat">
+        <li><h3>Transferência de arquivos</h3><p>Em dois painéis (este PC × remoto), nos dois sentidos, no P2P e na LAN/relay.</p></li>
+        <li><h3>Área de transferência compartilhada</h3><p>Ctrl+C numa máquina, Ctrl+V na outra.</p></li>
+        <li><h3>Abas de sessão</h3><p>Várias máquinas abertas ao mesmo tempo.</p></li>
+        <li><h3>Vários monitores</h3><p>Escolha qual tela ver.</p></li>
+        <li><h3>Sessões recentes e favoritos</h3><p>Reconecta com um clique.</p></li>
+        <li><h3>Busca na rede local</h3><p>Descobre os computadores da LAN sem digitar endereço.</p></li>
+        <li><h3>Dono na frente</h3><p>Quem está na máquina acessada mantém o mouse, e um aviso mostra que ela está sendo acessada.</p></li>
+        <li><h3>No Windows, sem atrito</h3><p>Ícone na bandeja, inicia com o sistema e se atualiza sozinho.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="baixar" class="dl" aria-labelledby="h-dl">
+    <div class="wrap">
+      <div class="dl-card">
+        <h2 id="h-dl">Pronto para o primeiro acesso?</h2>
+        <p class="cta-row">
+          <a class="btn" href="https://github.com/kickdown-sh/rdesk-releases/releases/latest/download/rdesk-setup.exe">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+            Baixar para Windows
+          </a>
+        </p>
+        <p class="meta">Instalador .exe · grátis, sem conta</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 rdesk · Windows</p>
+  </div>
+</footer>
+
+</body>
+</html>
